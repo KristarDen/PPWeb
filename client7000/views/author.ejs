@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=data[0].authorName %> <%=data[0].authorSurname %></title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-items: stretch;
+            background-color:beige;
+        }
+        .books{
+            display: flex;
+            flex-direction: column;
+        }
+        .book-item{
+            display: flex;
+            flex-direction: row;
+            align-items:flex-start;
+            align-self: stretch;
+            padding: 1vh;
+        }
+        .book-info{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
+        }
+        .book-item:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
+            align-self: stretch;
+        }
+        .title{
+            display: flex;
+            background-color: deepskyblue;
+            align-self: stretch;
+            color: azure;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 3vw;
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            margin-bottom: 3vw;
+        }
+        .min-cover{
+            display: flex;
+            width: 30%;
+        }
+        h1{
+            display: flex;
+            text-align: center;
+            background-color:peru;
+            border-radius: 2vw;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 0.5vw;
+            font-size: 5dvh;
+            margin-top: 0px;
+            cursor: pointer;
+        }
+        h2{
+            text-align: center;
+            background-color:sandybrown;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 1vw 4vw 1vw 4vw;
+            font-size: 2vw;
+            border-radius: 0.5dvh;
+            margin-top: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 onClick='location.href="/"'>&#128217; &#128218; Онлайн база книжок &#128214; &#128216;</h1>
+    <h2>Усі книги автора <%=data[0].authorName %> <%=data[0].authorSurname %> </h2>
+    <div class="books">
+        <% for(let i = 0; i < data.length; i+=1) {%>  
+            <div class="book-item" onClick='location.href="book?id=<%=data[i]._id%>"'>
+                <img class="min-cover" src=<%="public/images/"+data[i]._id +".jpg" %>>
+                <div class="book-info">
+                    <div class="title"><%=data[i].title %></div>
+                    <div class="author" onClick='event.stopPropagation(); location.href="/author?authorname=<%=data[i].authorName%>&authorsurname=<%=data[i].authorSurname %>"'>
+                        Автор : <%=data[i].authorName %> <%=data[i].authorSurname %>
+                    </div>
+                    <div>рік видання : <%=data[i].year %></div>
+                    <div>видавництво : <%=data[i].publishing %></div>
+                    <div>сторінок : <%=data[i].pages %></div>
+                    
+                </div>
+            </div>
+       <%} %>
+    </div>
+</body>
+</html>

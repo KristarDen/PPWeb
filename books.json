@@ -1,0 +1,101 @@
+[{
+  "_id": {
+    "$oid": "6415f6696633218aaeb57ea1"
+  },
+  "title": "Сліди у пилу",
+  "authorSurname": "Thorwald",
+  "authorName": "Jurgen",
+  "year": 1966,
+  "publishing": "Droemersche Verlagsanstalt",
+  "pages": 576
+},{
+  "_id": {
+    "$oid": "6415fa9c6633218aaeb57ea2"
+  },
+  "title": "Коротка історія майже всього на світі",
+  "authorSurname": "Bryson",
+  "authorName": "Bill",
+  "year": 2003,
+  "publishing": "Broadway Books",
+  "pages": 472
+},{
+  "_id": {
+    "$oid": "641ad3bef5700ff970088e56"
+  },
+  "title": "Dune",
+  "authorSurname": "Herbert",
+  "authorName": "Frank",
+  "year": 1965,
+  "publishing": "ChiltonBooks",
+  "pages": 412
+},{
+  "_id": {
+    "$oid": "641b0cb9b0027a7e1c27afc2"
+  },
+  "title": "Сімулякри і сімуляції",
+  "authorSurname": "Baudrillard",
+  "authorName": "Jean",
+  "year": 1981,
+  "publishing": "Galile",
+  "pages": 248
+},{
+  "_id": {
+    "$oid": "641b584fbe52db2a987d1891"
+  },
+  "title": "Суспільство споживання: його міфи та структури",
+  "authorSurname": "Baudrillard",
+  "authorName": "Jean",
+  "year": 1970,
+  "publishing": "Gallimard",
+  "pages": 384
+},{
+  "_id": {
+    "$oid": "641b62732854e0ed0b142809"
+  },
+  "title": "Меч призначення",
+  "authorSurname": "Анджей",
+  "authorName": "Сапковский",
+  "year": 1992,
+  "publishing": "superNOWA",
+  "pages": 384
+},{
+  "_id": {
+    "$oid": "643d8f9833b8291409b0e720"
+  },
+  "title": "Андроід для чайників",
+  "authorSurname": "Фелкер",
+  "authorName": "Донн",
+  "year": 2012,
+  "publishing": "Діалектика",
+  "pages": 335
+},{
+  "_id": {
+    "$oid": "643d919b33b8291409b0e722"
+  },
+  "title": "Ми - Легіон, Ми - Боб",
+  "authorSurname": "Тейлор",
+  "authorName": "Деніс",
+  "year": 2016,
+  "publishing": "FanZone",
+  "pages": 287
+},{
+  "_id": {
+    "$oid": "643ebb02767bfab92213b8b9"
+  },
+  "title": "Едем",
+  "authorSurname": "Лем",
+  "authorName": "Станіслав ",
+  "year": 1959,
+  "publishing": "Iskry",
+  "pages": 257
+},{
+  "_id": {
+    "$oid": "644007484392f9ba6d73cbe6"
+  },
+  "title": "Соляріс",
+  "authorSurname": "Лем",
+  "authorName": "Станіслав ",
+  "year": 1961,
+  "publishing": "Wydawnictwo Ministerstwa Obrony Narodowej",
+  "pages": 187
+}]

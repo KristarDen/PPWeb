@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=book.title%></title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items:stretch;
+            background-color:beige;
+        }
+         .book-item{
+            display: flex;
+            align-self: center;
+            flex-direction: row;
+            align-items:flex-start;
+            padding: 1vh;
+        }
+        .book-info{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 2vw;
+        }
+        .title{
+            display: flex;
+            background-color: deepskyblue;
+            align-self: stretch;
+            color: azure;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 3vw;
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            margin-bottom: 3vw;
+        }
+        .min-cover{
+            display: flex;
+            width: 30%;
+        }
+        h1{
+            text-align: center;
+            background-color:peru;
+            border-radius: 2vw;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 0.5vw;
+            font-size: 5vw;
+            margin-top: 0px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 onClick='location.href="/"'>&#128217; &#128218; Онлайн база книжок &#128214; &#128216;</h1>
+    <div class="book-item" >
+        <img class="min-cover" src=<%="public/images/"+book._id +".jpg" %>>
+        <div class="book-info">
+            <div class="title"><%=book.title %></div>
+            <div>Автор : <%=book.authorName %> <%=book.authorSurname %></div>
+            <div>рік видання : <%=book.year %></div>
+            <div>видавництво : <%=book.publishing %></div>
+            <div>сторінок : <%=book.pages %></div>
+        </div>
+    </div>
+</body>
+</html>

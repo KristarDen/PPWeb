@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати нову книгу</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items:stretch;
+            background-color:beige;
+        }
+        h1{
+            text-align: center;
+            background-color:peru;
+            border-radius: 2vw;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 0.5vw;
+            font-size: 5dvh;
+            margin-top: 0px;
+            cursor: pointer;
+        }
+        h2{
+            text-align: center;
+            background-color:sandybrown;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 1vw 4vw 1vw 4vw;
+            font-size: 3dvh;
+            margin-top: 0px;
+        }
+        .bookform{
+            display: flex;
+            align-self:center;
+            flex-direction: column;
+            margin-left: 5vw;
+            margin-right: 5vw;
+            max-width: 80vw;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            box-shadow: 0 0 40px rgba(241, 145, 0, 0.562);
+            padding: 2vw;
+            border-radius: 2vw;
+        }
+        @media (max-width: 600px) {
+            .bookform{
+                margin: 0px;
+            }
+            h1{
+                font-size: 3dvh;
+            }
+        }
+        input{
+            margin-bottom: 1vw;
+            border-radius: 1vw;
+            padding: 0.8vw;
+            font-size: 2vh;
+            border: 0px;
+        }
+        input[type="submit"]{
+            margin-top: 2vh;
+            background-color: darkseagreen;
+            color:aliceblue;
+            padding: 1vh;
+        }
+
+        input[type="submit"]:hover{
+            background-color:chartreuse;
+            color: black;
+        }
+
+        input[type="file"]{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        input::file-selector-button {
+            background-color: cadetblue;
+            color: aliceblue;
+            padding: 0.2em;
+            border-radius: 1vh;
+            border: 0px;
+        }
+        input::file-selector-button:hover {
+            background-color:chartreuse;
+            color: black;
+            padding: 0.2em;
+            border-radius: 1vh;
+            border: 0px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.562);
+        }
+        label{
+            padding-left: 1vw;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 onClick='location.href="/"'>&#128217; &#128218; Онлайн база книжок &#128214; &#128216;</h1>
+   
+    <form action="/addbook" method="post" enctype="multipart/form-data" class="bookform">
+        <h2>Нова книга</h2>
+        <label>обкладинка</label>
+        <input type="file" name="filedata" accept=".jpg, .jpeg">
+
+        <label>назва</label>
+        <input type="text" name="title">
+
+        <label>ім'я автора</label>
+        <input type="text" name="authorname">
+
+        <label>прізвище автора</label>
+        <input type="text" name="authorsurname">
+
+        <label>рік</label>
+        <input type="number" max="9999" name="year">
+
+        <label>видавництво</label>
+        <input type="text" name="publishing">
+
+        <label>кількість сторінок</label>
+        <input type="number" min="1" name="pages">
+
+        <input type="submit">
+    </form>
+</body>
+</html>

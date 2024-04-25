@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BooksBase</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-items: stretch;
+            background-color:beige;
+        }
+        .books{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .book-item{
+            display: flex;
+            flex-direction: row;
+            align-items:flex-start;
+            border: 1px darkkhaki solid;
+            background-color: honeydew;
+            border-radius: 10px;
+            max-width: 30vw;
+            padding: 1vh;
+            margin-bottom: 2vh;
+        }
+        .book-info{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+           
+        }
+        .book-item:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
+            align-self: stretch;
+           
+        }
+        .title{
+            display: flex;
+            background-color: deepskyblue;
+            align-self: stretch;
+            color: azure;
+            
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+        }
+        .min-cover{
+            display: flex;
+            max-height: 20vw;
+        }
+        h1{
+            text-align: center;
+            background-color:peru;
+            border-radius: 2vw;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 0.5vw;
+            font-size: 5dvh;
+            margin-top: 0px;
+            cursor: pointer;
+        }
+        .menu-item{
+            display: flex;
+            text-align: center;
+            background-color:peru;
+            border-radius: 1vw;
+            color: aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 1vw;
+            font-size: 2dvh;
+            margin-top: 0px;
+            margin-bottom: 2dvh;
+            cursor: pointer;
+        }
+        .menu-item:hover{
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+        .menu{
+            display: flex;
+            
+        }
+        .author:hover{
+            background-color: cadetblue;
+            cursor: pointer;
+            color: #fff;
+        }
+        .author:hover .tiptext{
+            visibility: visible;
+        }
+        .tiptext{
+            position: absolute;
+            visibility: hidden;
+            background-color: #555555b7;
+            color: #fff;
+            text-align: center;
+            margin-top: -2vh;
+            margin-left: 20px;
+            padding: 2px;
+            border-radius: 2px;
+            
+        }
+        @media (max-width: 750px) and (min-width: 601px) {
+            .books{
+                justify-content:space-around;
+            }
+            .book-item{
+                max-width: 40vw;
+            }
+        }
+        @media (max-width: 600px) {
+            .books{
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: stretch;
+                align-self: stretch;
+            }
+            .book-item{
+                align-self: stretch;
+                max-width: 200vw;
+            }
+            .min-cover{
+                max-height: 30vw;
+            }
+            h1{
+                font-size: 3vh;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1 onClick='location.href="/"'>&#128217; &#128218; Онлайн база книжок &#128214; &#128216;</h1>
+    <div class="menu">
+        <div class="menu-item" onclick='location.href="addbookform"'>Додати книгу 📝</div>
+    </div>
+    <div class="books">
+        <% for(let i = 0; i < data.length; i+=1) {%>  
+            <div class="book-item" onClick='location.href="book?id=<%=data[i]._id%>"'>
+                <img class="min-cover" src=<%="public/images/"+data[i]._id +".jpg" %>>
+                <div class="book-info">
+                    <div class="title"><%=data[i].title %></div>
+                    <div class="author" onClick='event.stopPropagation(); location.href="/author?authorname=<%=data[i].authorName%>&authorsurname=<%=data[i].authorSurname %>"'>
+                        Автор : <%=data[i].authorName %> <%=data[i].authorSurname %>
+                        <div class="tiptext">усі книги автора</div>
+                    </div>
+                    <div>рік видання : <%=data[i].year %></div>
+                    <div>видавництво : <%=data[i].publishing %></div>
+                    <div>сторінок : <%=data[i].pages %></div>
+                    
+                </div>
+            </div>
+       <%} %>
+    </div>
+</body>
+</html>
